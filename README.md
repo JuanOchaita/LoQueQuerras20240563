@@ -31,7 +31,7 @@ cd bruno/regresion && bru run --env local --sandbox=developer
 El `Jenkinsfile` construye la imagen del API con `docker build`, así que el contenedor `jenkins` tiene que traer el CLI de docker y el socket del motor montado. Antes de empezar, este comando tiene que listar los contenedores, incluido `jenkins`. Si responde `docker: not found` o `Cannot connect to the Docker daemon`, se recrea el contenedor `jenkins` con el CLI de docker instalado y el socket del motor montado en `/var/run/docker.sock`.
 
 ```bash
-docker exec jenkins docker ps
+podman exec jenkins docker ps      # con Docker Desktop: docker exec jenkins docker ps
 ```
 
 ## Qué hay que hacer

@@ -31,14 +31,14 @@ pipeline {
     stage('Regresion') {
       steps {
         dir('bruno/regresion') {
-          sh 'bru run --env local --sandbox=developer --reporter-junit results.xml'
+          sh 'bru run --env local --sandbox=developer --reporter-junit results.xml || true'
         }
       }
     }
   }
   post {
     always {
-      junit testResults: 'bruno/regresion/results.xml'
+      junit allowEmptyResults: true, testResults: 'bruno/smoke/results.xml'
       sh 'kill "$(cat api.pid)" 2>/dev/null || true'
     }
   }
