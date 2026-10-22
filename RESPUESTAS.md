@@ -1,3 +1,5 @@
+# Juan Ochaita
+
 # Respuestas
 
 - `Jenkinsfile`, ejecución de regresión: se eliminó `|| true`, porque ocultaba los fallos de Bruno y permitía que el pipeline continuara como si hubiera pasado.
